@@ -1,0 +1,20 @@
+blog_writing_task:
+  description: >
+    The task is to write a well researched blog on topic: {topic}.
+    The blog should always contain:
+    1. Fun facts about the topic: {topic}.
+    2. Emoji's wherever applicable.
+    3. Real life analogies wherever the need may be.
+    4. Fun and easy to understand writing style.
+
+    The blog should be fun to read by youngsters and increases the reader's count.
+    The blog should be reviewed when written.
+
+    Tasks to be done:
+    1. Research on {topic} by a researcher.
+    2. Writing the blog as per the requirements by a writer.
+    3. Reviewing the blog at the end and giving feedback by a blog reviewer.
+  expected_output: >
+    The blog should be saved as a markdown file to the given path. The blog
+    should be well structured and be able to display the emoji's added inside
+    the content of the blog.

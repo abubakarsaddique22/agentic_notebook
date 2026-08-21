@@ -1,0 +1,35 @@
+report_generation_task:
+  description: >
+    Write a detailed report on the impact of AI on {field}. Focus on covering
+    all the key facts and milestones in the report. the structure should be:
+    1. Give the report a catchy heading
+    2. List down 10 facts about the impact of AI on {field}.
+    3. Cover the important milestones in a different section.
+    4. Cover about how AI has benefited the people in the field: {field}.
+    5. Also discuss how AI can impact in a negative way, the people in the field: {field}.
+    The report should be well structured and descriptive.
+    There should be proper sections in the report.
+    The report has to be finally saved inside the project folder as a markdown file.
+  expected_output: >
+    The report should be in markdown format and saved to the location. The structure should 
+    be well organized. The report should not miss on key details and milestones
+    over the impact of AI on {field}.
+  agent: report_generator
+
+report_summarization_task:
+  description: >
+    Given the detailed report of the impact of AI on {field}, 
+    Give a proper heading to the summary.
+    Do note that the language of the summary is simple and easy to read.
+    Summarize the report in about 300 words covering:
+    1. Important facts and milestones as a separate section in the summary as List
+    of points.
+    2. Summarize the positive impacts of AI on the {field}, as per the report.
+    3. Summarize the negative impacts of AI on the {field}, as per the report
+    The summary should be well structured and organized.
+    Try to keep everything short and in a bulleted points like fashion.
+  expected_output:
+    A well structured summary of the report on the impact of AI on {field}.
+    The output should be a markdown file where the summary is easy to understand
+    and gives a good picture of the points covered inside the main report.
+  agent: report_summarizer

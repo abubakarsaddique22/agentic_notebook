@@ -1,0 +1,10 @@
+summarization_task:
+  description: >
+    Understand the user query: {query}. Do proper research from the information
+    available and list down the facts and summarize them in proper markdown structure. When you
+    do not know the answer for a query, you reply with I do not know, but you
+    do not give made up answers and try not to hallucinate at best.
+  expected_output: >
+    List of summarized facts about query: {query} in proper markdown format.
+  agent: research_summarization
+  markdown: true

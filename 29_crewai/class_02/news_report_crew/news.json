@@ -1,0 +1,34 @@
+{
+  "reports": [
+    {
+      "headline": "Attack kills six Pakistani soldiers, raises tension with Afghanistan",
+      "url": "https://www.aljazeera.com/where/pakistan/",
+      "news_summary": "An attack resulted in the deaths of six Pakistani soldiers, which has led to increased tensions along the border with Afghanistan. This incident threatens the existing shaky truce between Islamabad and Kabul, highlighting ongoing cross-border security challenges.",
+      "news_agency_name": "Al Jazeera"
+    },
+    {
+      "headline": "KP business community raises alarm over prolonged border closure",
+      "url": "https://www.dawn.com/latest-news",
+      "news_summary": "The business community in Khyber Pakhtunkhwa (KP) has expressed significant concern over the extended closure of the border, noting that bilateral trade between Pakistan and Afghanistan has seen a substantial decline of 53%. This situation is causing economic hardship and impacting regional commerce.",
+      "news_agency_name": "DAWN.COM"
+    },
+    {
+      "headline": "Bride and groom killed by gas explosion day after Pakistan wedding",
+      "url": "https://www.bbc.com/news/topics/c008ql15vpyt",
+      "news_summary": "Eight people, including a newlywed couple, were tragically killed after a gas cylinder exploded at a house in Islamabad the morning after their wedding. The incident also left twelve others injured, underscoring the dangers of gas cylinder safety.",
+      "news_agency_name": "BBC News"
+    },
+    {
+      "headline": "At Karachi rally, KP CM vows to expand PTI street movement nationwide",
+      "url": "https://www.geo.tv/",
+      "news_summary": "During a rally held in Karachi, the Chief Minister of Khyber Pakhtunkhwa (KP) announced plans to expand the Pakistan Tehreek-e-Insaf (PTI) street movement across the entire nation. This indicates an intention to mobilize broader public support and exert political pressure nationwide.",
+      "news_agency_name": "Geo News"
+    },
+    {
+      "headline": "Pakistan is in the final phases of striking a $1.5-billion deal to supply weapons and jets to Sudan",
+      "url": "https://www.reuters.com/world/pakistan/",
+      "news_summary": "Pakistan is reportedly nearing the completion of a significant $1.5-billion agreement to provide weapons and jets to Sudan. This information comes from a former top air force official and three anonymous sources, highlighting a major defense export initiative for Pakistan.",
+      "news_agency_name": "Reuters"
+    }
+  ]
+}
