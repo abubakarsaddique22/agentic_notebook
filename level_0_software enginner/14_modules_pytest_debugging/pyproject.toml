@@ -1,0 +1,10 @@
+[project]
+name = "practice-bot"
+version = "0.1.0"
+requires-python = ">=3.10"
+
+# pythonpath = ["."] pytest ko batata hai ke `bot` package root mein hai,
+# taake tests mein `from bot...` kaam kare.
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

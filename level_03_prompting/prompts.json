@@ -1,0 +1,30 @@
+{
+  "rag_prompt": {
+    "version": "1.0.0",
+    "template_format": "jinja2",
+    "messages": [
+      {
+        "role": "system",
+        "template": "Sirf diye gaye context se jawab do. Na mile to kaho: 'Mere paas yeh maloomat nahi.'"
+      },
+      {
+        "role": "human",
+        "template": "Context:\n{{ context }}\n\nSawal:\n{{ question }}"
+      }
+    ]
+  },
+  "summary_prompt": {
+    "version": "1.0.0",
+    "template_format": "jinja2",
+    "messages": [
+      {
+        "role": "system",
+        "template": "Tum professional summarizer ho."
+      },
+      {
+        "role": "human",
+        "template": "Is text ka {{ num_points }} bullets mein summary do:\n\n{{ text }}"
+      }
+    ]
+  }
+}
