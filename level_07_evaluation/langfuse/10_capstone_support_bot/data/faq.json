@@ -1,0 +1,12 @@
+[
+  {"id": "delivery-time", "question": "Delivery kitne din mein hoti hai?", "answer": "Lahore mein 1-2 din, baqi Pakistan mein 3-5 working days.", "keywords": ["delivery", "din", "days", "kab", "time", "shipping", "aayega"]},
+  {"id": "delivery-charges", "question": "Delivery charges kitne hain?", "answer": "Rs. 3000 se upar order par delivery free hai, warna Rs. 200 charges hain.", "keywords": ["charges", "delivery", "fee", "free", "shipping", "kiraya"]},
+  {"id": "payment", "question": "Payment kaise hoti hai?", "answer": "Sirf Cash on Delivery (COD). Card, bank transfer, JazzCash, EasyPaisa ya crypto payment nahi hoti.", "keywords": ["payment", "cod", "card", "jazzcash", "easypaisa", "bank", "pay", "bitcoin", "crypto"]},
+  {"id": "exchange", "question": "Exchange policy kya hai?", "answer": "Delivery ke 7 din ke andar exchange ho sakta hai agar product unused aur original packing mein ho. Refund nahi hota.", "keywords": ["exchange", "return", "refund", "wapas", "badalna", "policy", "paise"]},
+  {"id": "warranty", "question": "Warranty kitni hai?", "answer": "Watch machine par 6 mahine ki warranty hai. Strap aur glass warranty mein shamil nahi.", "keywords": ["warranty", "guarantee", "kharab", "machine", "repair", "strap", "toot"]},
+  {"id": "order-tracking", "question": "Order kaise track karoon?", "answer": "Dispatch ke baad WhatsApp par tracking number bheja jata hai. Courier ki website par track kar sakte hain.", "keywords": ["track", "tracking", "order", "status", "kahan", "courier"]},
+  {"id": "original", "question": "Kya watches original hain?", "answer": "Hum premium quality first-copy aur imported watches bechte hain; har product ki description mein quality clearly likhi hoti hai.", "keywords": ["original", "fake", "copy", "quality", "imported", "branded"]},
+  {"id": "cancel", "question": "Order cancel kaise karoon?", "answer": "Dispatch se pehle WhatsApp par order number bhej kar cancel karwa sakte hain.", "keywords": ["cancel", "cancellation", "nahi chahiye", "order"]},
+  {"id": "wallets", "question": "Kya wallets bhi milte hain?", "answer": "Haan, men's leather wallets bhi available hain. Website par Wallets collection dekhein.", "keywords": ["wallet", "wallets", "leather", "purse", "batwa"]},
+  {"id": "contact", "question": "Contact kaise karein?", "answer": "WhatsApp par message karein, subah 10 se raat 10 baje tak reply milta hai.", "keywords": ["contact", "whatsapp", "number", "timing", "baat", "call"]}
+]

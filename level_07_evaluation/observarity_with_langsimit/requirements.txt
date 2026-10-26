@@ -1,0 +1,20 @@
+# Core
+langsmith[pytest]>=0.4.0
+openai>=1.40.0          # OpenAI SDK -- Groq ke OpenAI-compatible endpoint ke liye
+python-dotenv>=1.0.0
+
+# LangChain / LangGraph (folder 03, 07)
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-groq>=0.3.0   # ChatGroq (folder 03, 06, 07, 09)
+langgraph>=0.2.0
+
+# Evaluation helpers (folder 06)
+openevals>=0.0.11
+pandas>=2.0.0
+pytest>=8.0.0
+
+# Capstone project (folder 09)
+fastapi>=0.110.0
+uvicorn>=0.29.0
+httpx>=0.27.0

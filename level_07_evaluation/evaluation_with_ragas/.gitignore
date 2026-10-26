@@ -1,0 +1,26 @@
+# secrets -- KABHI commit mat karo
+.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# vector stores (dobara ban jate hain)
+chroma_store*/
+
+# run outputs (har run naya banata ha)
+experiments/
+datasets/
+online/logs/
+online/reports/
+regression/runs/
+regression/model_selection_*.json
+framework_comparison.md
+
+# baseline COMMIT karo -- CI isi se compare karta ha
+!regression/baseline.json
+
+# editor
+.vscode/

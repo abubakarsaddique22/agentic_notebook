@@ -1,0 +1,48 @@
+# Regression quality gate: har pull request pe core evals chalao, baseline se compare karo.
+# Metric gira -> run_suite exit code 1 -> PR check FAIL -> merge block (branch protection ma
+# "evals / regression-gate" ko required check bana do).
+#
+# runs-on: self-hosted -- apna Windows PC GitHub runner bana do (repo Settings > Actions > Runners >
+# New self-hosted runner). Wahan Ollama pehle se signed-in ha, gpt-oss:20b-cloud + embedding
+# models pulled hain, aur conda env "genai" maujood ha. Isse cloud runner pe Ollama setup
+# ki zaroorat nahi padti.
+
+name: evals
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  regression-gate:
+    runs-on: self-hosted
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write .env from secrets
+        shell: cmd
+        run: |
+          echo LANGCHAIN_TRACING_V2=false> .env
+          echo OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}>> .env
+
+      - name: Install requirements
+        shell: cmd
+        run: |
+          call conda activate genai
+          pip install -r requirements.txt
+
+      - name: Run core evals + compare with baseline
+        shell: cmd
+        run: |
+          call conda activate genai
+          python -m evals.06_regression.run_suite --suite core
+
+      - name: Upload eval results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: |
+            experiments/
+            regression/runs/

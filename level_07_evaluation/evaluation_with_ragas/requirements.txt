@@ -1,0 +1,18 @@
+# RAGAS eval project
+# TIP: sab theek chal raha ho to `pip freeze` se exact versions yahan pin kar do (CI ke liye)
+
+# eval framework + judge
+ragas
+openai
+pandas
+python-dotenv
+datacompy<1.0          # RAGAS DataCompyScore (M7.6); datacompy 1.x ka import path RAGAS 0.4 se match nahi karta
+
+# RAG app + agent (src/)
+langchain-core
+langchain-ollama
+langchain-openai
+langchain-chroma
+langchain-text-splitters
+sentence-transformers
+langsmith

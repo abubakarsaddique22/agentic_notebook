@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-10-24T22:42:25",
+  "config": {
+    "generator_model": "gpt-oss:20b-cloud",
+    "judge_model": "gpt-oss:20b-cloud",
+    "judge_embed_model": "all-minilm:latest",
+    "rag_embed": "ollama:nomic-embed-text",
+    "retriever": "chroma + ms-marco-MiniLM rerank, chunk 1000/150",
+    "generator_py_hash": "9622d09c13db",
+    "git_commit": null
+  },
+  "evals": {
+    "retriever": {
+      "csv": "experiments\\retriever_20261024-215218.csv",
+      "n": 10,
+      "metrics": {
+        "context_recall": {
+          "value": 0.9833333333333334,
+          "how": "mean",
+          "errors": 0
+        },
+        "context_precision": {
+          "value": 0.9012499999681355,
+          "how": "mean",
+          "errors": 0
+        }
+      }
+    },
+    "generator": {
+      "csv": "experiments\\generator_20261024-215718.csv",
+      "n": 10,
+      "metrics": {
+        "faithfulness": {
+          "value": 0.9444444444444444,
+          "how": "mean",
+          "errors": 0
+        },
+        "answer_relevancy": {
+          "value": 0.7730597947696201,
+          "how": "mean",
+          "errors": 0
+        }
+      }
+    },
+    "pipeline": {
+      "csv": "experiments\\pipeline_20261024-220231.csv",
+      "n": 10,
+      "metrics": {
+        "context_relevance": {
+          "value": 1.0,
+          "how": "mean",
+          "errors": 0
+        },
+        "faithfulness": {
+          "value": 0.9329166666666666,
+          "how": "mean",
+          "errors": 0
+        },
+        "answer_relevancy": {
+          "value": 0.6332325430251582,
+          "how": "mean",
+          "errors": 0
+        }
+      }
+    },
+    "application": {
+      "csv": "experiments\\application_20261024-221021.csv",
+      "n": 15,
+      "metrics": {
+        "answer_accuracy": {
+          "value": 0.9666666666666667,
+          "how": "mean",
+          "errors": 0
+        },
+        "completeness": {
+          "value": 0.7146666666666667,
+          "how": "mean",
+          "errors": 0
+        },
+        "teaching_style": {
+          "value": 0.8666666666666667,
+          "how": "rate",
+          "errors": 0
+        }
+      }
+    },
+    "citation": {
+      "csv": "experiments\\citation_20261024-221743.csv",
+      "n": 10,
+      "metrics": {
+        "citation_present": {
+          "value": 1.0,
+          "how": "rate",
+          "errors": 0
+        },
+        "citation_valid": {
+          "value": 1.0,
+          "how": "mean",
+          "errors": 0
+        },
+        "citation_support": {
+          "value": 1.0,
+          "how": "rate",
+          "errors": 0
+        }
+      }
+    },
+    "toxicity": {
+      "csv": "experiments\\toxicity_20261024-222043.csv",
+      "n": 15,
+      "metrics": {
+        "safety_pass": {
+          "value": 1.0,
+          "how": "rate",
+          "errors": 0
+        }
+      }
+    },
+    "leakage": {
+      "csv": "experiments\\leakage_20261024-222429.csv",
+      "n": 15,
+      "metrics": {
+        "leak_pass": {
+          "value": 1.0,
+          "how": "rate",
+          "errors": 0
+        }
+      }
+    },
+    "scope": {
+      "csv": "experiments\\scope_20261024-222707.csv",
+      "n": 15,
+      "metrics": {
+        "scope_pass": {
+          "value": 0.8666666666666667,
+          "how": "rate",
+          "errors": 0
+        }
+      }
+    },
+    "injection": {
+      "csv": "experiments\\injection_20261024-223246.csv",
+      "n": 8,
+      "metrics": {
+        "injection_pass": {
+          "value": 0.375,
+          "how": "rate",
+          "errors": 0
+        }
+      }
+    },
+    "ops": {
+      "csv": "experiments\\ops_20261024-223608.csv",
+      "n": 10,
+      "metrics": {
+        "latency_s": {
+          "value": 15.18,
+          "how": "p95",
+          "errors": 0
+        },
+        "ttft_s": {
+          "value": 9.27,
+          "how": "p95",
+          "errors": 0
+        }
+      }
+    },
+    "agent": {
+      "csv": "experiments\\agent_20261024-224029.csv",
+      "n": 13,
+      "metrics": {
+        "tool_call_f1": {
+          "value": 0.7436,
+          "how": "mean",
+          "errors": 0
+        },
+        "goal_accuracy": {
+          "value": 0.5384615384615384,
+          "how": "rate",
+          "errors": 0
+        },
+        "end_state_pass": {
+          "value": 0.6923076923076923,
+          "how": "rate",
+          "errors": 0
+        },
+        "no_denied_tools": {
+          "value": 1.0,
+          "how": "rate",
+          "errors": 0
+        }
+      }
+    }
+  },
+  "crashed": []
+}

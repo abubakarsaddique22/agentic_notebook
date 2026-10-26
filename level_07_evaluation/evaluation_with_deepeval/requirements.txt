@@ -1,0 +1,19 @@
+# Level 07 evaluation project
+# TIP: apne working env ke exact versions pin karo, warna CI pe naya version kuch tor sakta ha:
+#      pip show deepeval langchain-ollama langchain-chroma   -> versions yahan likh do (deepeval==x.y.z)
+
+# eval framework + judge
+deepeval
+openai
+json-repair
+python-dotenv
+pytest
+
+# RAG app (src/)
+langchain-core
+langchain-ollama
+langchain-openai
+langchain-chroma
+langchain-text-splitters
+sentence-transformers
+langsmith

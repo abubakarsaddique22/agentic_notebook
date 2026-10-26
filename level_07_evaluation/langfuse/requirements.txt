@@ -1,0 +1,20 @@
+# Python 3.11+ required (Langfuse SDK v5)
+
+# Core
+langfuse>=5.0.0
+openai>=1.40.0
+python-dotenv>=1.0.0
+
+# LangChain / LangGraph (folder 03, 07)  -- Langfuse v5 needs langchain-core 1.x
+langchain-core>=1.0.0
+langchain-openai>=1.0.0
+langgraph>=1.0.0
+
+# Evaluation (folder 06)
+autoevals>=0.0.100
+pytest>=8.0.0
+
+# Capstone project (folder 10)
+fastapi>=0.110.0
+uvicorn>=0.29.0
+httpx>=0.27.0
