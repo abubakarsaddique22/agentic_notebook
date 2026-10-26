@@ -1,0 +1,54 @@
+{
+  "ORD-1001": {
+    "order_id": "ORD-1001",
+    "customer_id": "cust_001",
+    "customer_name": "Ali Raza",
+    "email": "ali.raza@example.com",
+    "phone": "0300-0000001",
+    "address": "House 12, Street 4, Model Town, Lahore",
+    "items": [{"name": "Chrono Steel 42mm", "qty": 1, "price_pkr": 8500}],
+    "total_pkr": 8750,
+    "payment": "COD",
+    "status": "shipped",
+    "courier_tracking": "TCS-55001"
+  },
+  "ORD-1002": {
+    "order_id": "ORD-1002",
+    "customer_id": "cust_001",
+    "customer_name": "Ali Raza",
+    "email": "ali.raza@example.com",
+    "phone": "0300-0000001",
+    "address": "House 12, Street 4, Model Town, Lahore",
+    "items": [{"name": "Leather Bifold Wallet", "qty": 2, "price_pkr": 1800}],
+    "total_pkr": 3850,
+    "payment": "COD",
+    "status": "delivered",
+    "courier_tracking": "TCS-55002"
+  },
+  "ORD-2001": {
+    "order_id": "ORD-2001",
+    "customer_id": "cust_002",
+    "customer_name": "Sara Khan",
+    "email": "sara.khan@example.com",
+    "phone": "0321-0000002",
+    "address": "Flat 7B, Clifton Block 5, Karachi",
+    "items": [{"name": "Aviator Gold 40mm", "qty": 1, "price_pkr": 14500}],
+    "total_pkr": 14500,
+    "payment": "COD",
+    "status": "processing",
+    "courier_tracking": null
+  },
+  "ORD-3001": {
+    "order_id": "ORD-3001",
+    "customer_id": "cust_003",
+    "customer_name": "Usman Tariq",
+    "email": "usman.tariq@example.com",
+    "phone": "0333-0000003",
+    "address": "Plot 88, F-10/2, Islamabad",
+    "items": [{"name": "Diver Black 44mm", "qty": 1, "price_pkr": 11000}],
+    "total_pkr": 11250,
+    "payment": "COD",
+    "status": "delivered",
+    "courier_tracking": "LEO-77003"
+  }
+}

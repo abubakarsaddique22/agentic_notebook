@@ -1,0 +1,31 @@
+# ---- Target app (agentic RAG) ----
+langchain
+langchain-groq
+langchain-ollama
+langchain-chroma
+langchain-text-splitters
+langgraph
+chromadb
+python-dotenv
+pydantic
+pytest
+
+# ---- M8.4 agent security ----
+sqlglot
+
+# ---- M8.6 PII & secrets ----
+presidio-analyzer
+presidio-anonymizer
+spacy
+detect-secrets
+
+# ---- M8.7 red teaming ----
+deepteam
+
+# ---- M8.3 guardrails framework (optional reference; heavier) ----
+# nemoguardrails
+
+# After install:
+#   python -m spacy download en_core_web_lg
+#   ollama pull all-minilm          (embeddings)
+#   ollama pull gpt-oss:20b-cloud    (moderation / red team; same as Level 7)

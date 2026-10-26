@@ -1,0 +1,38 @@
+# ============================================================================
+# Colang file (.co) - seekhne ke liye tafseeli comments ke saath
+# ============================================================================
+#
+# Colang kya hai?
+#   NeMo Guardrails ki apni chhoti "language" hai jisse hum rails ka behaviour
+#   likhte hain. Python nahi, balke ek simple script jahan hum kehte hain:
+#   "yeh check chalao, agar fail ho to bot ko rok do".
+#
+# flow kya hai?
+#   "flow" = steps ka ek chhota sequence. config.yml ne jin flows ke naam diye
+#   (self check input / self check output), un ki asal tafseel yahan likhi hai.
+#
+# execute kya karta hai?
+#   config.yml mein likha prompt (self_check_input / self_check_output) model se
+#   chalata hai aur "yes/no" ko True/False mein badal deta hai.
+# ============================================================================
+
+
+# User ka message aate hi chalega. Agar check "allowed = false" de
+# (yani message khatarnak hai) to bot refuse karke ruk jaata hai (stop).
+define flow self check input
+  $allowed = execute self_check_input
+  if not $allowed
+    bot refuse
+    stop
+
+# Bot ka jawab bahar jaane se pehle chalega. Leak ho to refuse.
+define flow self check output
+  $allowed = execute self_check_output
+  if not $allowed
+    bot refuse
+    stop
+
+# "bot refuse" matlab bot yeh fixed jumla bolega. Yeh ek tarah ka safe jawab hai
+# jab asli jawab dena khatarnak ho.
+define bot refuse
+  "Sorry, I can't help with that request for security reasons."
