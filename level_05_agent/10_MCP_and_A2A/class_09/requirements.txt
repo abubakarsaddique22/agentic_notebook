@@ -1,0 +1,9 @@
+mcp>=2,<3
+langchain[mcp]
+langchain-groq
+langchain-google-genai
+python-dotenv
+httpx
+httpx2
+pydantic
+prometheus-client>=0.20,<1

@@ -1,0 +1,116 @@
+x-base: &base
+  build: .
+  restart: unless-stopped
+  init: true
+  networks: [mcp_internal]
+  read_only: true
+  tmpfs: [/tmp]
+  security_opt: [no-new-privileges:true]
+  cap_drop: [ALL]
+  logging:
+    driver: json-file
+    options: {max-size: '5m', max-file: '3'}
+
+x-health: &health
+  interval: 30s
+  timeout: 12s
+  retries: 3
+  start_period: 15s
+
+services:
+  travel:
+    <<: *base
+    command: ['python', 'servers/travel_server.py']
+    environment:
+      HEALTH_MCP_URL: http://127.0.0.1:8001/mcp
+    healthcheck:
+      <<: *health
+      test: ['CMD', 'python', 'healthcheck.py']
+  policy:
+    <<: *base
+    command: ['python', 'servers/policy_server.py']
+    env_file: .env
+    environment:
+      HEALTH_MCP_URL: http://127.0.0.1:8002/mcp
+    volumes:
+      - rag_index:/app/data/index_storage
+    healthcheck:
+      <<: *health
+      test: ['CMD', 'python', 'healthcheck.py']
+  work:
+    <<: *base
+    command: ['python', 'servers/work_server.py']
+    environment:
+      HEALTH_MCP_URL: http://127.0.0.1:8003/mcp
+    healthcheck:
+      <<: *health
+      test: ['CMD', 'python', 'healthcheck.py']
+  booking:
+    <<: *base
+    command: ['python', 'servers/booking_server.py']
+    env_file: .env
+    environment:
+      BOOKING_RESOURCE_URL: http://booking:8004/mcp
+      BOOKING_MCP_URL: http://127.0.0.1:8004/mcp
+      BOOKING_DB_PATH: /app/state/approvals.db
+    volumes:
+      - booking_state:/app/state
+    healthcheck:
+      <<: *health
+      test: ['CMD', 'python', 'healthcheck_booking.py']
+  monitor:
+    <<: *base
+    command: ['python', 'monitor.py']
+    depends_on:
+      travel: {condition: service_healthy}
+      policy: {condition: service_healthy}
+      work: {condition: service_healthy}
+  prometheus:
+    image: prom/prometheus:v3.7.3
+    restart: unless-stopped
+    networks: [mcp_internal]
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command: ['--config.file=/etc/prometheus/prometheus.yml', '--storage.tsdb.path=/prometheus']
+  indexer:
+    build: .
+    profiles: ['tools']
+    env_file: .env
+    command: ['python', 'build_index.py']
+    networks: [mcp_internal]
+    volumes:
+      - rag_index:/app/data/index_storage
+    restart: 'no'
+  agent:
+    build: .
+    profiles: ['tools']
+    env_file: .env
+    command: ['python', 'agent.py']
+    networks: [mcp_internal]
+    depends_on:
+      travel: {condition: service_healthy}
+      policy: {condition: service_healthy}
+      work: {condition: service_healthy}
+    restart: 'no'
+  approval:
+    build: .
+    profiles: ['tools']
+    env_file: .env
+    environment:
+      BOOKING_MCP_URL: http://booking:8004/mcp
+    command: ['python', 'approval_workflow.py']
+    networks: [mcp_internal]
+    stdin_open: true
+    tty: true
+    depends_on:
+      booking: {condition: service_healthy}
+    restart: 'no'
+
+networks:
+  mcp_internal:
+    internal: false  # egress required for Groq/Gemini/Open-Meteo APIs; no host ports exposed
+volumes:
+  booking_state:
+  rag_index:
+  prometheus_data:
