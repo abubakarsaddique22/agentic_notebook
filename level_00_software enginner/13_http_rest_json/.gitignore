@@ -1,0 +1,13 @@
+# Secrets
+.env
+
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Exercise outputs
+users.json
