@@ -1,0 +1,9 @@
+PRODUCT LIST - TimeHouse Watch Store (fictional)
+------------------------------------------------
+1. Classic Steel Analog   | Price: 4,500 PKR  | Stock: 12 | Warranty: 6 months
+2. Black Leather Chrono   | Price: 6,800 PKR  | Stock: 0  | Warranty: 1 year
+3. Gold Dial Executive    | Price: 9,999 PKR  | Stock: 5  | Warranty: 1 year
+4. Sports Silicone Strap  | Price: 3,200 PKR  | Stock: 20 | Warranty: 3 months
+5. Minimal White Dial     | Price: 5,500 PKR  | Stock: 3  | Warranty: 6 months
+
+Delivery: Cash on Delivery all over Pakistan, 3-5 working days.

@@ -1,0 +1,21 @@
+# =====================================================================
+#  CONCEPT: YAML config (tasks)
+#  Har task ka naam crew.py ke @task function ke naam se match kare.
+#  agent: yahan agent ka naam (agents.yaml wala) likhte hain.
+# =====================================================================
+
+analysis_task:
+  description: >
+    Analyze {product} ({price} PKR): design, quality, value for
+    the price, and which type of customer it is best for.
+  expected_output: >
+    3 pros, 3 cons, and a 1-line "best for" — as bullet points.
+  agent: product_analyst
+
+review_task:
+  description: >
+    Use the analysis to write a customer review of {product}.
+  expected_output: >
+    A title, a 120-word review, and a rating (out of 5) at the end.
+  agent: review_writer
+  markdown: true
