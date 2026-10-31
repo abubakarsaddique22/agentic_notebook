@@ -1,0 +1,33 @@
+[project]
+name = "agno-course"
+version = "1.0.0"
+description = "Agno complete course - 12 classes (Roman Urdu notes)"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "agno~=3.1.12",
+    "python-dotenv>=1.0",
+    # model providers
+    "groq",
+    "openai",
+    "ollama",
+    "google-genai",
+    # tools
+    "ddgs",
+    # database (sessions + memory)
+    "sqlalchemy[asyncio]",
+    "aiosqlite",
+    # knowledge / RAG
+    "lancedb",
+    "tantivy",
+    "fastembed",
+    "pypdf",
+    "aiofiles",
+    # MCP + AgentOS
+    "mcp",
+    "fastmcp>=4.0.0,<5",
+    "fastapi",
+    "uvicorn",
+]
+
+[tool.uv]
+package = false
