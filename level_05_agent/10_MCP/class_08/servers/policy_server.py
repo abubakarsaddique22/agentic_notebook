@@ -14,7 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from rag_utils import cosine, file_hash
 
-load_dotenv(ROOT.parent / ".env")
+load_dotenv()
 DOC = ROOT / "data" / "company_policy.md"
 INDEX = ROOT / "data" / "policy_index.json"
 server = MCPServer("Company Policy RAG MCP Server")
@@ -25,8 +25,8 @@ def search_sync(query: str, top_k: int) -> dict:
         return {"success": False, "error": "query cannot be empty"}
     if not INDEX.exists():
         return {"success": False, "error": "Index missing. Run: python build_index.py"}
-    if not os.getenv("GOOGLE_API_KEY"):
-        return {"success": False, "error": "GOOGLE_API_KEY is missing"}
+    if not os.getenv("GEMINI_API_KEY"):
+        return {"success": False, "error": "GEMINI_API_KEY is missing"}
 
     data = json.loads(INDEX.read_text(encoding="utf-8"))
     if data.get("source_sha256") != file_hash(DOC):

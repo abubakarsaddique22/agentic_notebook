@@ -3,6 +3,8 @@ import sys
 from pathlib import Path
 
 from mcp import Client, StdioServerParameters
+ # a data class or content block type used to represent plain text returned by an MCP server 
+ # (such as from a tool execution or prompt).
 from mcp.types import TextContent
 
 

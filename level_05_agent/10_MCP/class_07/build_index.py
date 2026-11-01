@@ -13,9 +13,9 @@ MODEL = "gemini-embedding-2"
 
 
 def main():
-    load_dotenv(ROOT.parent / ".env")
-    if not os.getenv("GOOGLE_API_KEY"):
-        raise RuntimeError("Set GOOGLE_API_KEY in MCP_Practical/.env")
+    load_dotenv()
+    if not os.getenv("Gemini_API_KEY"):
+        raise RuntimeError("Set Gemini_API_KEY in MCP_Practical/.env")
     chunks = chunk_markdown(DOC.read_text(encoding="utf-8"))
     if not chunks:
         raise RuntimeError("Source policy document is empty")
