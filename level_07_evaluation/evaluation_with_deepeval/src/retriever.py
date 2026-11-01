@@ -3,7 +3,7 @@ import re
 import glob
 
 from dotenv import load_dotenv
-from langchain_openai import OpenAIEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_ollama import OllamaEmbeddings
 from langchain_chroma import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -12,7 +12,7 @@ from langchain_core.documents import Document
 load_dotenv()  # loads OPENAI_API_KEY from .env
 
 DATA_DIR = "data"
-DB_DIR = "chroma_store_final"
+DB_DIR = "chroma_store"
 
 
 # 1. LOAD ---- read each transcript, throw away the VTT timestamps
@@ -37,12 +37,10 @@ def load_transcripts():
 
 # 2. BUILD ---- chunk, embed once, and keep it on disk so we don't re-embed
 def load_store():
-    # embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
-    embeddings = OpenAIEmbeddings(
-    model="openai/text-embedding-3-large",
-    openai_api_key=os.environ.get("OPENROUTER_API_KEY"),
-    openai_api_base="https://openrouter.ai/api/v1"
-)
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    
+
+
 
     # openai/text-embedding-3-large:batch
 

@@ -190,7 +190,7 @@ def run(retriever):
 
             "retriever": "reranker",
 
-            "embedding_model": "openai/text-embedding-3-large",
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
 
             "chunk_size": 1000,
 
