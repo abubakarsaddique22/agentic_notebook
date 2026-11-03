@@ -1,0 +1,10 @@
+define user ask working hours
+  "When is the IT helpdesk open?"
+  "What are your support hours?"
+
+define bot give working hours
+  "Helpdesk: Monday-Friday, 09:00-18:00 Pakistan time."
+
+define flow
+  user ask working hours
+  bot give working hours

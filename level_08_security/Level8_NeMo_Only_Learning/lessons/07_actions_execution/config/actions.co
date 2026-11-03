@@ -1,0 +1,11 @@
+define user ask support hours
+  "Check support hours"
+  "Tell me the helpdesk timetable"
+
+define bot show support hours
+  "Helpdesk is open Monday-Friday, 09:00-18:00 Pakistan time."
+
+define flow
+  user ask support hours
+  $hours = execute get_support_hours
+  bot show support hours

@@ -1,0 +1,27 @@
+# Colang 1.0: dialog flows and custom input/retrieval/execution guardrails.
+# Input: optional lightweight perplexity observation (not an accuracy-proven blocker).
+define flow lightweight jailbreak observation
+  $flagged = execute observe_lightweight_jailbreak
+  if $flagged
+    bot refuse to respond
+    stop
+
+# Retrieval: reject untrusted instructions in knowledge snippets.
+define flow reject suspicious retrieved context
+  $safe = execute validate_retrieved_context
+  if not $safe
+    bot refuse to respond
+    stop
+
+define user ask for helpdesk hours
+  "What are the helpdesk working hours?"
+  "When is IT support open?"
+  "What time does the helpdesk work?"
+
+define bot answer helpdesk hours
+  "Helpdesk hours are Monday to Friday, 09:00–18:00 Pakistan time (it_policy.md)."
+
+define flow helpdesk hours dialog
+  user ask for helpdesk hours
+  bot answer helpdesk hours
+

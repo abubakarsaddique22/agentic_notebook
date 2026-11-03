@@ -1,0 +1,4 @@
+{
+  "it_policy.md": {"tenant_id": "public", "classification": "internal"},
+  "expense_policy.md": {"tenant_id": "public", "classification": "internal"}
+}

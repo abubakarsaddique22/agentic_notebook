@@ -1,0 +1,6 @@
+# NeMo Colang 1.0 input rail using a project-local custom action.
+define flow lightweight jailbreak check
+  $detected = execute check_lightweight_jailbreak
+  if $detected
+    bot refuse to respond
+    stop
